@@ -1,6 +1,6 @@
 package com.skilldistillery.jetsapplication.aircrafts;
 
-public class Helicopter extends Aircraft implements ShootGun{
+public class Helicopter extends Aircraft implements ShootGun, TransportPeople{
 
 	public Helicopter() {};
 	
@@ -21,6 +21,12 @@ public class Helicopter extends Aircraft implements ShootGun{
 
 	@Override
 	public void fly() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void transportPeople() {
 		// TODO Auto-generated method stub
 		
 	}
