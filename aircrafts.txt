@@ -1,0 +1,17 @@
+Category, model, in service, speed, range, price
+Combat Aircraft, F/A-18, 257, 1_190, 1_089, 29_000_000
+Combat Aircraft, F/A-18E/F, 512, 1_190, 1_275, 70_000_000
+Combat Aircraft, F-35 Lightning II, 1_200, 1_500, 80_000_000
+Airborne early warning and control, E-2 Hawkeye, 21, 648, 1_462, 176_000_000
+Electronic Warfare, EA-18G Growler, 153, 1_190, 1_275, 68_200_000
+Tanker, KC-130, 3, 417, 2_835, 37_000_000
+Maritime Patrol, P-3 Orion, 52, 750, 2_380, 36_000_000
+Maritime Patrol, P-8, 81, 907, 4_500, 256_500_000
+Transport, Beechcraft C-12, 70, 333, 2_075, 6_000_000
+Transport, C-2 Greyhound, 27, 394, 1_300, 40_100_000
+Helicopter, V-22 Osprey, 59, 316, 1_940, 72_100_000
+Helicopter, SH-60 Seahawk, 59, 168, 450, 28_100_000
+Helicopter, CH-53E Super Stallion, 27, 173, 540, 34_360_000
+Trainer Aircraft, T-34 Mentor, 75, 322, 708, 170_000
+Trainer Aircraft, TH-57 Sea Ranger, 113, 150, 374, 900_000
+Trainer Aircraft, T-6 Texan II, 294, 364, 1_036, 4_272_000
