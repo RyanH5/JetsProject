@@ -1,10 +1,9 @@
 Category, model, in service, speed, range, price
 Combat Aircraft, F/A-18, 257, 1_190, 1_089, 29_000_000
 Combat Aircraft, F/A-18E/F, 512, 1_190, 1_275, 70_000_000
-Combat Aircraft, F-35 Lightning II, 1_200, 1_500, 80_000_000
+Combat Aircraft, F-35 Lightning II, 21, 1_200, 1_500, 80_000_000
 Airborne early warning and control, E-2 Hawkeye, 21, 648, 1_462, 176_000_000
 Electronic Warfare, EA-18G Growler, 153, 1_190, 1_275, 68_200_000
-Tanker, KC-130, 3, 417, 2_835, 37_000_000
 Maritime Patrol, P-3 Orion, 52, 750, 2_380, 36_000_000
 Maritime Patrol, P-8, 81, 907, 4_500, 256_500_000
 Transport, Beechcraft C-12, 70, 333, 2_075, 6_000_000
