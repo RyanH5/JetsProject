@@ -7,7 +7,8 @@ import java.util.Scanner;
 import com.skilldistillery.jetsapplication.aircrafts.*;
 
 public class JetsApplication {
-	Airfield airfield = new Airfield();
+	private Airfield airfield = new Airfield();
+	private boolean gameOver = false;
 
 	public JetsApplication() {
 	}
@@ -16,9 +17,11 @@ public class JetsApplication {
 		JetsApplication app = new JetsApplication();
 		String fileName = "./aircrafts.txt";
 		app.launch(fileName);
-		app.userInteraction();
-		Airfield airfield = new Airfield();
-
+		Scanner kb = new Scanner(System.in);
+		while (!app.gameOver) {
+			app.userInteraction(kb);
+		}
+		kb.close();
 	}
 
 	public void launch(String fileName) {
@@ -80,15 +83,14 @@ public class JetsApplication {
 		return craft;
 	}
 
-	public void userInteraction() {
-		Scanner kb = new Scanner(System.in);
+	public void userInteraction(Scanner kb) {
 		presentMenu();
 		int userChoice = kb.nextInt();
 		runUserSelectedMethod(userChoice);
-		kb.close();
 	}
 
 	public void presentMenu() {
+		spaceForMenu();
 		System.out.println("1. List fleet");
 		System.out.println("2. Fly all aircrafts");
 		System.out.println("3. View aircraft with longest range");
@@ -99,6 +101,11 @@ public class JetsApplication {
 		System.out.println("8. Drop bom");
 		System.out.println("9. Load all Cargo aircrafts");
 		System.out.println("10. Quit");
+	}
+	
+	public void spaceForMenu() {
+		System.out.println();
+		System.out.println();
 	}
 
 	public void runUserSelectedMethod(int userChoice) {
