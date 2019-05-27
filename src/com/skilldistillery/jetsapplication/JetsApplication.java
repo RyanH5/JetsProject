@@ -126,6 +126,8 @@ public class JetsApplication {
 		case 7: 
 			removeAnAircraft(kb);
 			break;
+		case 9: 
+			gameOver();
 		}
 	}
 
@@ -231,7 +233,11 @@ public class JetsApplication {
 
 		}
 		airfield.getAircrafts().add(craft);
-
+	}
+	
+	public void gameOver() {
+		this.gameOver = true;
+		System.exit(0);
 	}
 	
 }
