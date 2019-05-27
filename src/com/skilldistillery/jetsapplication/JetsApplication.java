@@ -115,10 +115,13 @@ public class JetsApplication {
 			flyAllJets();
 			break;
 		case 3:
-			longestRangeAircraft();
+			fastestAircraft();
 			break;
 		case 4:
-			fastestAircraft();
+			longestRangeAircraft();
+			break;
+		case 5:
+			shootEmIfYaGotEm();
 			break;
 		case 6 :
 			addNewAircraft(kb);
@@ -172,8 +175,11 @@ public class JetsApplication {
 //	NOT WORKING YET *********************************************
 	public void shootEmIfYaGotEm() {
 		for (Aircraft ac : airfield.getAircrafts()) {
-			if (ac.getCategory() == "Helicopter") {
-				
+			if (ac instanceof Helicopter) {
+				((Helicopter) ac).shootGun();
+			}
+			if (ac instanceof CombatAircraft) {
+				((CombatAircraft) ac).shootGun();
 			}
 		}
 	}

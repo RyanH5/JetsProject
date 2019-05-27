@@ -14,8 +14,8 @@ public class Helicopter extends Aircraft implements ShootGun, TransportPeople{
 	}
 
 	@Override
-	public String shootGun() {
-		return model + " shoots gun like PEW PEW";	
+	public void shootGun() {
+		System.out.println(model + " shoots gun like PEW PEW");	
 	}
 
 	@Override
