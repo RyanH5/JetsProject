@@ -14,16 +14,9 @@ public class Helicopter extends Aircraft implements ShootGun, TransportPeople{
 	}
 
 	@Override
-	public void shootGun() {
-		// TODO Auto-generated method stub
-		
+	public String shootGun() {
+		return model + " shoots gun like PEW PEW";	
 	}
-
-//	@Override
-//	public void fly() {
-//		// TODO Auto-generated method stub
-//		
-//	}
 
 	@Override
 	public void transportPeople() {
