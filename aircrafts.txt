@@ -10,6 +10,3 @@ Transport, C-2 Greyhound, 27, 394, 1300, 40100000
 Helicopter, V-22 Osprey, 59, 316, 1940, 72100000
 Helicopter, SH-60 Seahawk, 59, 168, 450, 28100000
 Helicopter, CH-53E Super Stallion, 27, 173, 540, 34360000
-Trainer Aircraft, T-34 Mentor, 75, 322, 708, 170000
-Trainer Aircraft, TH-57 Sea Ranger, 113, 150, 374, 900000
-Trainer Aircraft, T-6 Texan II, 294, 364, 1036, 4272000

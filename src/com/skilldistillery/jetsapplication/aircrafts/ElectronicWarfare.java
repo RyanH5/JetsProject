@@ -11,10 +11,10 @@ public class ElectronicWarfare extends Aircraft {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void fly() {
-		// TODO Auto-generated method stub
-
-	}
+//	@Override
+//	public void fly() {
+//		// TODO Auto-generated method stub
+//
+//	}
 
 }

@@ -8,6 +8,7 @@ import com.skilldistillery.jetsapplication.aircrafts.*;
 
 public class JetsApplication {
 	Airfield airfield = new Airfield();
+
 	public JetsApplication() {
 	}
 
@@ -34,7 +35,7 @@ public class JetsApplication {
 				aircraftData = line.split(", ");
 				Aircraft ac = createAircrafts(aircraftData);
 				airfield.getAircrafts().add(ac);
-				
+
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -46,7 +47,7 @@ public class JetsApplication {
 			}
 		}
 	}
-	
+
 	public Aircraft createAircrafts(String[] aircraft) {
 		String category = aircraft[0];
 		String model = aircraft[1];
@@ -55,33 +56,29 @@ public class JetsApplication {
 		int range = Integer.parseInt(aircraft[4]);
 		int price = Integer.parseInt(aircraft[5]);
 		Aircraft craft = null;
-			switch(category) {
-			case "Combat Aircraft":
-				craft = new CombatAircraft(category, model, inServiceQuant, speed, range, price);
-				break;
-			case "Airborne early warning and control":
-				craft = new AirbornEarlyWarningControl(category, model, inServiceQuant, speed, range, price);
-				break;
-			case "Maritime Patrol":
+		switch (category) {
+		case "Combat Aircraft":
+			craft = new CombatAircraft(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Airborne early warning and control":
+			craft = new AirbornEarlyWarningControl(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Maritime Patrol":
 			craft = new MaritimePatrol(category, model, inServiceQuant, speed, range, price);
 			break;
-			case "Electronic Warfare":
-				craft = new ElectronicWarfare(category, model, inServiceQuant, speed, range, price);
-				break;
-			case "Trainer":
-				craft = new Trainer(category, model, inServiceQuant, speed, range, price);
-				break;
-			case "Transport":
+		case "Electronic Warfare":
+			craft = new ElectronicWarfare(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Transport":
 			craft = new Transport(category, model, inServiceQuant, speed, range, price);
 			break;
-			case "Helicopter":
-				craft = new Helicopter(category, model, inServiceQuant, speed, range, price);
-				break;
-				
-			}
+		case "Helicopter":
+			craft = new Helicopter(category, model, inServiceQuant, speed, range, price);
+			break;
+
+		}
 		return craft;
 	}
-	
 
 	public void userInteraction() {
 		Scanner kb = new Scanner(System.in);
@@ -90,6 +87,7 @@ public class JetsApplication {
 		runUserSelectedMethod(userChoice);
 		kb.close();
 	}
+
 	public void presentMenu() {
 		System.out.println("1. List fleet");
 		System.out.println("2. Fly all aircrafts");
@@ -102,17 +100,22 @@ public class JetsApplication {
 		System.out.println("9. Quit");
 		System.out.println("10. Dogfight!");
 	}
-	
+
 	public void runUserSelectedMethod(int userChoice) {
-		switch(userChoice) {
-		case 1: System.out.println(airfield.toString());
-		break;
+		switch (userChoice) {
+		case 1:
+			System.out.println(airfield.toString());
+			break;
+		case 2:
+			flyAllJets();
+			break;
 		}
 	}
-	
-	
-	
 
-
+	public void flyAllJets() {
+		for (Aircraft ac : airfield.getAircrafts()) {
+			System.out.println(ac.fly());
+		}
+	}
 
 }

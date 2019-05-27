@@ -8,9 +8,7 @@ public abstract class Aircraft {
 	protected int range;
 	protected int price;
 
-	public Aircraft() {
-		// TODO Auto-generated constructor stub
-	}
+	public Aircraft() {}
 	
 	public Aircraft(String category, String model, int inService, int speed, int range, int price) {
 		this.category = category;
@@ -35,7 +33,7 @@ public abstract class Aircraft {
 
 	@Override
 	public String toString() {
-		return "\nAircraft [category=" + category + ", model=" + model + ", inService=" + inService + ", speed=" + speed
+		return "\n Aircraft [category=" + category + ", model=" + model + ", inService=" + inService + ", speed=" + speed
 				+ ", range=" + range + ", price=" + price + "]";
 	}
 
@@ -75,6 +73,10 @@ public abstract class Aircraft {
 		this.price = price;
 	}
 
-	public abstract void fly();
+	public String fly() {
+		double flightTimeLong = (double)range / (double)speed;
+		double flightTime = (double) Math.round(flightTimeLong * 1000d) / 1000d;
+		return "At " + speed + " mph the " + model + " can fly for " + flightTime + " hours given the range of " + range;
+	}
 
 }

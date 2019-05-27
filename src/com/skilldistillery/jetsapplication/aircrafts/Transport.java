@@ -11,11 +11,11 @@ public class Transport extends Aircraft implements TransportPeople {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void fly() {
-		// TODO Auto-generated method stub
-
-	}
+//	@Override
+//	public void fly() {
+//		// TODO Auto-generated method stub
+//
+//	}
 
 	@Override
 	public void transportPeople() {
