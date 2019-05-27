@@ -110,6 +110,9 @@ public class JetsApplication {
 			flyAllJets();
 			break;
 		case 3:
+			longestRangeAircraft();
+			break;
+		case 4:
 			fastestAircraft();
 			break;
 		}
@@ -123,10 +126,8 @@ public class JetsApplication {
 
 	public void fastestAircraft() {
 		int fastest = 0;
-		int longest = 0;
 		for (Aircraft ac : airfield.getAircrafts()) {
 			fastest = Math.max(fastest, ac.getSpeed());
-			longest = Math.max(longest, ac.getRange());
 		}
 		String fastestJet = "";
 		for (Aircraft ac : airfield.getAircrafts()) {
@@ -137,6 +138,21 @@ public class JetsApplication {
 		}
 		System.out.println("Fastest jet specs:");
 		System.out.println(fastestJet);
+	}
 
+	public void longestRangeAircraft() {
+		int longest = 0;
+		for (Aircraft ac : airfield.getAircrafts()) {
+			longest = Math.max(longest, ac.getRange());
+		}
+		String longestJet = "";
+		for (Aircraft ac : airfield.getAircrafts()) {
+			if (ac.getRange() == longest) {
+				longestJet = ac.toString();
+			}
+
+		}
+		System.out.println("Longest range jet specs:");
+		System.out.println(longestJet);
 	}
 }
