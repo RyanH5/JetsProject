@@ -33,6 +33,12 @@ public abstract class Aircraft {
 		return model;
 	}
 
+	@Override
+	public String toString() {
+		return "Aircraft [category=" + category + ", model=" + model + ", inService=" + inService + ", speed=" + speed
+				+ ", range=" + range + ", price=" + price + "]";
+	}
+
 	public void setModel(String model) {
 		this.model = model;
 	}
