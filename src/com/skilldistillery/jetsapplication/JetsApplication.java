@@ -2,6 +2,7 @@ package com.skilldistillery.jetsapplication;
 
 import java.io.*;
 //import java.util.*;
+import java.util.Scanner;
 
 import com.skilldistillery.jetsapplication.aircrafts.*;
 
@@ -14,6 +15,8 @@ public class JetsApplication {
 		JetsApplication app = new JetsApplication();
 		String fileName = "./aircrafts.txt";
 		app.launch(fileName);
+		app.userInteraction();
+		Airfield airfield = new Airfield();
 
 	}
 
@@ -26,7 +29,6 @@ public class JetsApplication {
 		String[] aircraftData = null;
 		String line;
 		try {
-			Airfield airfield = new Airfield();
 			br = new BufferedReader(new FileReader(fileName));
 			while ((line = br.readLine()) != null) {
 				aircraftData = line.split(", ");
@@ -81,6 +83,13 @@ public class JetsApplication {
 	}
 	
 
+	public void userInteraction() {
+		Scanner kb = new Scanner(System.in);
+		presentMenu();
+		int userChoice = kb.nextInt();
+		runUserSelectedMethod(userChoice);
+		kb.close();
+	}
 	public void presentMenu() {
 		System.out.println("1. List fleet");
 		System.out.println("2. Fly all aircrafts");
@@ -93,6 +102,16 @@ public class JetsApplication {
 		System.out.println("9. Quit");
 		System.out.println("10. Dogfight!");
 	}
+	
+	public void runUserSelectedMethod(int userChoice) {
+		switch(userChoice) {
+		case 1: System.out.println(airfield.toString());
+		break;
+		}
+	}
+	
+	
+	
 
 
 

@@ -35,7 +35,7 @@ public abstract class Aircraft {
 
 	@Override
 	public String toString() {
-		return "Aircraft [category=" + category + ", model=" + model + ", inService=" + inService + ", speed=" + speed
+		return "\nAircraft [category=" + category + ", model=" + model + ", inService=" + inService + ", speed=" + speed
 				+ ", range=" + range + ", price=" + price + "]";
 	}
 
