@@ -98,8 +98,7 @@ public class JetsApplication {
 		System.out.println("6. Add an aircraft to the fleet");
 		System.out.println("7. Remove an aircraft from the fleet");
 		System.out.println("8. Drop bom");
-		System.out.println("9. Load all Cargo aircrafts");
-		System.out.println("10. Quit");
+		System.out.println("9. Quit");
 	}
 	
 	public void spaceForMenu() {
@@ -120,6 +119,9 @@ public class JetsApplication {
 			break;
 		case 4:
 			fastestAircraft();
+			break;
+		case 6 :
+			addNewAircraft(kb);
 			break;
 		case 7: 
 			removeAnAircraft(kb);
@@ -182,6 +184,54 @@ public class JetsApplication {
 		}
 		int aircraftToRemove = kb.nextInt();
 		airfield.getAircrafts().remove(aircraftToRemove);
+	}
+	
+	public void addNewAircraft(Scanner kb) {
+		System.out.println("Which type of aircraft would you like to add to the airfield?");	
+		String category = kb.next();
+		
+		System.out.println("What is the name model name?");
+		String model = kb.next();
+		
+		System.out.println("How many of these aircrafts does the Navy own?");
+		int inServiceQuant = kb.nextInt();
+		
+		System.out.println("What is the max speed?");
+		int speed = kb.nextInt();
+		
+		System.out.println("How far can it fly on one tank of gas?");
+		int range = kb.nextInt();
+		
+		System.out.println("How much does it cost?");
+		int price = kb.nextInt();
+		
+		
+		Aircraft craft = null;
+		switch (category) {
+		case "Combat Aircraft":
+			craft = new CombatAircraft(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Airborne early warning and control":
+			craft = new AirbornEarlyWarningControl(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Maritime Patrol":
+			craft = new MaritimePatrol(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Electronic Warfare":
+			craft = new ElectronicWarfare(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Transport":
+			craft = new Transport(category, model, inServiceQuant, speed, range, price);
+			break;
+		case "Helicopter":
+			craft = new Helicopter(category, model, inServiceQuant, speed, range, price);
+			break;
+			default: craft = new JetImpl(category, model, inServiceQuant, speed, range, price);
+			break;
+
+		}
+		airfield.getAircrafts().add(craft);
+
 	}
 	
 }
