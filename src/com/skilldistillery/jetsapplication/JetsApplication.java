@@ -1,13 +1,13 @@
 package com.skilldistillery.jetsapplication;
 
 import java.io.*;
-//import java.util.*;
-import java.util.Scanner;
+import java.util.*;
 
 import com.skilldistillery.jetsapplication.aircrafts.*;
 
 public class JetsApplication {
-	Airfield airfield = new Airfield();
+	private Airfield airfield = new Airfield();
+	private boolean gameOver = false;
 
 	public JetsApplication() {
 	}
@@ -16,9 +16,11 @@ public class JetsApplication {
 		JetsApplication app = new JetsApplication();
 		String fileName = "./aircrafts.txt";
 		app.launch(fileName);
-		app.userInteraction();
-		Airfield airfield = new Airfield();
-
+		Scanner kb = new Scanner(System.in);
+		while (!app.gameOver) {
+			app.userInteraction(kb);
+		}
+		kb.close();
 	}
 
 	public void launch(String fileName) {
@@ -80,15 +82,14 @@ public class JetsApplication {
 		return craft;
 	}
 
-	public void userInteraction() {
-		Scanner kb = new Scanner(System.in);
+	public void userInteraction(Scanner kb) {
 		presentMenu();
 		int userChoice = kb.nextInt();
-		runUserSelectedMethod(userChoice);
-		kb.close();
+		runUserSelectedMethod(userChoice, kb);
 	}
 
 	public void presentMenu() {
+		spaceForMenu();
 		System.out.println("1. List fleet");
 		System.out.println("2. Fly all aircrafts");
 		System.out.println("3. View aircraft with longest range");
@@ -100,8 +101,13 @@ public class JetsApplication {
 		System.out.println("9. Load all Cargo aircrafts");
 		System.out.println("10. Quit");
 	}
+	
+	public void spaceForMenu() {
+		System.out.println();
+		System.out.println();
+	}
 
-	public void runUserSelectedMethod(int userChoice) {
+	public void runUserSelectedMethod(int userChoice, Scanner kb) {
 		switch (userChoice) {
 		case 1:
 			System.out.println(airfield.toString());
@@ -114,6 +120,9 @@ public class JetsApplication {
 			break;
 		case 4:
 			fastestAircraft();
+			break;
+		case 7: 
+			removeAnAircraft(kb);
 			break;
 		}
 	}
@@ -155,4 +164,24 @@ public class JetsApplication {
 		System.out.println("Longest range jet specs:");
 		System.out.println(longestJet);
 	}
+	
+//	NOT WORKING YET *********************************************
+	public void shootEmIfYaGotEm() {
+		for (Aircraft ac : airfield.getAircrafts()) {
+			if (ac.getCategory() == "Helicopter") {
+				
+			}
+		}
+	}
+//	***************************************************************
+	
+	public void removeAnAircraft(Scanner kb) {
+		System.out.println("Which aircraft do you wish to remove?");
+		for (int i = 0; i < airfield.getAircrafts().size(); i++) {
+			System.out.println(i + ": " + airfield.getAircrafts().get(i).getModel());
+		}
+		int aircraftToRemove = kb.nextInt();
+		airfield.getAircrafts().remove(aircraftToRemove);
+	}
+	
 }
