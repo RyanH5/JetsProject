@@ -11,11 +11,11 @@ public class MaritimePatrol extends Aircraft implements DropBomb{
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void fly() {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void fly() {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	@Override
 	public void dropBom() {

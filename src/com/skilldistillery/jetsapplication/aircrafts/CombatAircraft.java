@@ -19,10 +19,10 @@ public class CombatAircraft extends Aircraft implements ShootGun, DropBomb{
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
-	public void fly() {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public String fly() {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 }
