@@ -92,13 +92,13 @@ public class JetsApplication {
 		System.out.println("1. List fleet");
 		System.out.println("2. Fly all aircrafts");
 		System.out.println("3. View aircraft with longest range");
-		System.out.println("4. Load all Cargo aircrafts");
+		System.out.println("4. View the fastest aircraft");
 		System.out.println("5. Shoot gun");
 		System.out.println("6. Add an aircraft to the fleet");
 		System.out.println("7. Remove an aircraft from the fleet");
 		System.out.println("8. Drop bom");
-		System.out.println("9. Quit");
-		System.out.println("10. Dogfight!");
+		System.out.println("9. Load all Cargo aircrafts");
+		System.out.println("10. Quit");
 	}
 
 	public void runUserSelectedMethod(int userChoice) {
@@ -109,6 +109,12 @@ public class JetsApplication {
 		case 2:
 			flyAllJets();
 			break;
+		case 3:
+			longestRangeAircraft();
+			break;
+		case 4:
+			fastestAircraft();
+			break;
 		}
 	}
 
@@ -118,4 +124,35 @@ public class JetsApplication {
 		}
 	}
 
+	public void fastestAircraft() {
+		int fastest = 0;
+		for (Aircraft ac : airfield.getAircrafts()) {
+			fastest = Math.max(fastest, ac.getSpeed());
+		}
+		String fastestJet = "";
+		for (Aircraft ac : airfield.getAircrafts()) {
+			if (ac.getSpeed() == fastest) {
+				fastestJet = ac.toString();
+			}
+
+		}
+		System.out.println("Fastest jet specs:");
+		System.out.println(fastestJet);
+	}
+
+	public void longestRangeAircraft() {
+		int longest = 0;
+		for (Aircraft ac : airfield.getAircrafts()) {
+			longest = Math.max(longest, ac.getRange());
+		}
+		String longestJet = "";
+		for (Aircraft ac : airfield.getAircrafts()) {
+			if (ac.getRange() == longest) {
+				longestJet = ac.toString();
+			}
+
+		}
+		System.out.println("Longest range jet specs:");
+		System.out.println(longestJet);
+	}
 }
