@@ -115,10 +115,10 @@ public class JetsApplication {
 			flyAllJets();
 			break;
 		case 3:
-			fastestAircraft();
+			longestRangeAircraft();
 			break;
 		case 4:
-			longestRangeAircraft();
+			fastestAircraft();
 			break;
 		case 5:
 			shootEmIfYaGotEm();
@@ -128,6 +128,9 @@ public class JetsApplication {
 			break;
 		case 7: 
 			removeAnAircraft(kb);
+			break;
+		case 8:
+			droppinBombsOverBaghdad();
 			break;
 		case 9: 
 			gameOver();
@@ -172,7 +175,6 @@ public class JetsApplication {
 		System.out.println(longestJet);
 	}
 	
-//	NOT WORKING YET *********************************************
 	public void shootEmIfYaGotEm() {
 		for (Aircraft ac : airfield.getAircrafts()) {
 			if (ac instanceof Helicopter) {
@@ -183,7 +185,17 @@ public class JetsApplication {
 			}
 		}
 	}
-//	***************************************************************
+	
+	public void droppinBombsOverBaghdad() {
+		for (Aircraft ac : airfield.getAircrafts()) {
+			if (ac instanceof CombatAircraft) {
+				((CombatAircraft) ac).dropBomb();
+			}
+			if (ac instanceof MaritimePatrol) {
+				((MaritimePatrol) ac).dropBomb();
+			}
+		}
+	}
 	
 	public void removeAnAircraft(Scanner kb) {
 		System.out.println("Which aircraft do you wish to remove?");

@@ -10,8 +10,9 @@ public class CombatAircraft extends Aircraft implements ShootGun, DropBomb{
 		// TODO Auto-generated constructor stub
 	}
 	@Override
-	public void dropBom() {
-		// TODO Auto-generated method stub
+	public void dropBomb() {
+		System.out.println(model + " is droppin bombs over Baghdad ");
+		System.out.println("NA NA NAAA");
 		
 	}
 	@Override
